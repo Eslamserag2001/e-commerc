@@ -1,0 +1,47 @@
+ <div class="w-50 mx-auto rounded-4 p-1 my-5">
+
+
+<form [formGroup]="userDataForm" (ngSubmit)="checkoutbtn()" class=" mx-auto">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">details :</label>
+        <input  formControlName="details"  type="text" class="form-control" id="exampleFormControlInput1" placeholder="details about you">
+     @if (userDataForm.get('details')?.errors && userDataForm.get('details')?.touched ) {
+        <div class="alert alert-danger">
+          <h5>some thing is wrong  </h5>
+        </div>
+     }
+    </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput2" class="form-label">phone :</label>
+        <input formControlName="phone" type="number" class="form-control" id="exampleFormControlInput2" placeholder="your phone">
+        @if (userDataForm.get('phone')?.errors&&userDataForm.get('phone')?.touched) {
+          <div class="alert alert-danger">
+            <h5>some thing is wrong  </h5>
+          </div>
+       }
+     
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput3" class="form-label">city :</label>
+        <input formControlName="city" type="text" class="form-control" id="exampleFormControlInput3" placeholder="city">
+        @if (userDataForm.get('city')?.errors && userDataForm.get('city')?.touched ) {
+          <div class="alert alert-danger">
+            <h5>some thing is wrong  </h5>
+          </div>
+       }
+     
+     
+     
+      </div>
+      <div class="col-auto">
+        <button type="submit"[disabled]="userDataForm.invalid" class="btn btn-primary w-100 mb-3">Check Out
+          @if(isloading){
+            <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+            }
+        </button>
+      </div>
+
+</form>
+
+
+</div> 

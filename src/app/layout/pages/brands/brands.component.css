@@ -1,0 +1,37 @@
+.bodoy{
+    background-color : rgb(43, 120, 187) ; 
+ }
+ .words5{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    line-clamp: 3;
+ }
+ 
+ .card{
+ 
+ transition: all .5s;
+ }
+ .card:hover{
+    transform: scale(1.030) translateX(3px);
+  
+ }
+ .cursor-pointer{
+    cursor: pointer;
+ }
+ 
+  .h-60{  height:60%;  }
+  .h-40{  height:50%;  }
+  
+  .btn-hover{
+ 
+    transform: translate(5px,70px);
+    opacity: 0;
+    transition: opacity 1.3s,transform 0.5s;
+  }
+  .all:hover .btn-hover{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+ 

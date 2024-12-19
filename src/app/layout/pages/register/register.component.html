@@ -1,0 +1,155 @@
+
+
+
+<div class="container-fluid bg-svg  p-3">
+
+  <div class=" shadow w-75 mx-auto  rounded-5 p-3 p-5">
+    <h1 class="text-success"> Register Now</h1>
+    @if (msg) {
+      <div class="alert alert-danger">
+        <h3>{{msg}}</h3>
+  
+      </div>
+    }
+  
+      <form   [formGroup]="registerform" (ngSubmit)="regestersubmit()">
+  
+  
+  
+        <!-- ****************name -->
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input formControlName="name" type="text" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+    
+          @if (registerform.get('name')?.errors && registerform.get('name')?.touched)
+          {
+          <div class="alert alert-danger ">
+    
+            @if ( registerform.get('name')?.errors?.['required'] )
+            {
+            <p>name is required </p>
+            }
+    
+            @else if ( registerform.get('name')?.errors?.['maxlength'])
+            {
+            <p class="p-2 "> maxlenth is 15 words </p>
+            }
+    
+            @else if ( registerform.get('name')?.errors?.['minlength'])
+            {
+            <p class="p-2 ">minLength is 5 words </p>
+            }
+    
+    
+          </div>
+          }
+    
+        </div>
+  
+        <!-- ***********   email -->
+        <div class="mb-3">
+          <label for="exampleInputPassword2" class="form-label">Email</label>
+          <input formControlName="email" type="email" class="form-control" id="exampleInputPassword2">
+    
+          @if (registerform.get('email')?.errors && registerform.get('email')?.touched) {
+          <div class="alert alert-danger">
+    
+            @if (registerform.get('email')?.errors?.['email']) {
+            <p>syntax error</p>
+            }
+            @else if (registerform.get('email')?.errors?.['required']) {
+            <p>email is required</p>
+            }
+    
+    
+    
+    
+          </div>
+          }
+        </div>
+  
+        <!-- **************pass -->
+        <div class="mb-3">
+          <label for="exampleInputEmail3" class="form-label">Password</label>
+          <input formControlName="password" type="password" class="form-control" id="exampleInputEmail3"
+            aria-describedby="emailHelp">
+    
+    
+          @if (registerform.get('password')?.errors &&registerform.get('password')?.touched) {
+    
+          <div class="alert alert-danger">
+    
+            @if (registerform.get('password')?.errors?.['required']) {<p>pass is required</p>}
+            @else if (registerform.get('password')?.errors?.['pattern']) {<p>syntax error must be ---[a-z] [0-9]*7</p>}
+    
+          </div>
+    
+          }
+        </div>
+  
+        <!-- ***************repass -->
+        <div class="mb-3">
+          <label for="exampleInputEmail23" class="form-label">rePassword</label>
+          <input formControlName="rePassword" type="password" class="form-control" id="exampleInputEmail23"
+            aria-describedby="emailHelp">
+    
+    
+          @if (registerform.get('rePassword')?.errors &&registerform.get('rePassword')?.touched) {
+    
+          <div class="alert alert-danger">
+    
+            @if (registerform.get('password')?.errors?.['required']) {<p>repass is required</p>}
+            @else if (registerform.get('password')?.errors?.['pattern']) {<p>syntax error must be ---[a-z] [0-9]*7</p>}
+    
+          </div>
+    
+          }
+        </div>
+    
+        <!-- **************phone -->
+        <div class="mb-3">
+          <label for="exampleInputPassword4" class="form-label">your phone</label>
+          <input formControlName="phone" type="number" accept="image/*" class="form-control" id="exampleInputPassword4">
+    
+    
+          @if (registerform.get('phone')?.errors && registerform.get('phone')?.touched ) {
+          <div class="alert alert-danger">
+            @if (registerform.get('phone')?.errors?.['required']) {
+            <p>phone is required</p>
+            }
+            @if (registerform.get('phone')?.errors?.['pattern']) {
+            <p>syntax error</p>
+            }
+          </div>
+          }
+   
+        </div>
+       <!-- pathmach -->
+       @if(registerform.errors){
+  
+        <div class="alert alert-danger">
+      
+      
+          <p>pass != repass  check it</p>
+        </div>
+    }
+        <!-- ***************  btn  -->
+        <button type="submit" [disabled]="registerform.invalid" class="btn btn-primary w-25 d-block ms-auto">Submit
+    
+    
+          @if (isloading) {
+          <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+          }
+        </button>
+      </form>
+  
+  <!--  -->
+    
+  
+  </div>
+</div>
+
+
+
+

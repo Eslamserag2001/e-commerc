@@ -1,0 +1,48 @@
+@if (errmsg) {
+<h1> the error: {{errmsg}}</h1>
+}
+
+
+
+<div class="">
+    <div class="container-fluid row p-3">
+        @if (product) {
+
+        <div class="    col-md-5   col-sm-12 ">
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide> <img [src]=" product.images[0]" class="w-100" alt=""> </ng-template>
+                <ng-template carouselSlide> <img [src]=" product.images[1]" class="w-100" alt=""> </ng-template>
+                <ng-template carouselSlide> <img [src]=" product.images[2]" class="w-100" alt=""> </ng-template>
+                <ng-template carouselSlide> <img [src]=" product.images[3]" class="w-100" alt=""> </ng-template>
+            </owl-carousel-o>
+
+
+        </div>
+        <div class="  p-4   bg-body-tertiary  col-md-7 col-sm-12 ">
+
+            <h1 class="mt-3 text-success"> Name: <span class="text-black-50">{{ product?.category?.name }}</span> </h1>
+            <h2> Slug : <span class="text-black-50">{{ product?.slug }}</span> </h2>
+            <h2> Title: <span class="text-black-50"> {{ product?.title }}</span></h2>
+            <h3> RatingsQuantity: <span class="text-black-50"> {{ product?.ratingsQuantity }}</span> <i
+                    class="fa-solid fa-star" style="color: #FFD43B;"></i> </h3>
+            <h4 class="text-success"> Price: <span class="text-black-50">{{ product?.price }}EGB</span> </h4>
+            <h4>Quantity:<span class="text-black-50">{{ product?.quantity }}</span> </h4>
+            <h4>Sold: <span class="text-black-50">{{ product?.sold }}</span> </h4>
+            <h4> RatingsAverage:<span class="text-black-50">{{ product?.ratingsAverage }} </span> <i
+                    class="fa-solid fa-star" style="color: #FFD43B;"></i> <i class="fa-solid fa-star"
+                    style="color: #FFD43B;"></i> </h4>
+            <h4> CreatedAt: <span class="text-black-50"> {{ product?.createdAt }} </span></h4>
+
+
+            <h4>UpdatedAt:<span class="text-black-50"> {{ product?.updatedAt }}</span> </h4>
+
+
+
+
+        </div>
+
+        }
+    </div>
+
+
+</div>

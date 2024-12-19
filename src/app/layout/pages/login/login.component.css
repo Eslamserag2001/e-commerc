@@ -1,0 +1,22 @@
+/* .container{
+    background-image: url(../../../../assets/imglogin.jpeg);
+    background-size: cover;
+    
+    
+} */
+.vh-75{
+    height:80vh ;
+    
+    /* background-image: url(../../../../assets/imglogin.jpeg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+.vh-50{
+    height: 50vh;
+}
+.svg{
+
+    background-color: #d7ebef;
+}

@@ -1,0 +1,35 @@
+
+<div class="container  p-2 ">
+
+
+    @if (category_product) {
+  
+
+    <div class="card mx-auto h-75 shadow" style="width: 18rem;">
+        <img [src]="category_product.image" class="card-img-top" alt="category_img">
+        <div class="card-body">
+          <h5 class="card-title text-info-emphasis"> <span class="text-dark">name:</span> {{category_product.name}}  </h5>
+          <h5 class="card-title text-info-emphasis"> <span class="text-dark">slug:</span>{{category_product.slug}}   </h5>
+          <h5 class="card-title text-info-emphasis"><span class="text-dark">crdAt:</span> {{category_product.createdAt}}   </h5>
+          <h5 class="card-title text-info-emphasis"> <span class="text-dark">updAt:</span>{{category_product.updatedAt}}   </h5>
+          <h5 class="card-title text-info-emphasis"><span class="text-dark">__v:</span> {{category_product.__v}}   </h5>
+          
+        </div>
+      </div>
+
+
+
+
+
+    
+    }
+
+
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+<div class="mt-5 container-fluid p-5 overflow-hidden ">
+    <div class="row gx-3 gy-2">
+        @for (item of CategoryProduct; track $index) {
+        <!-- <p>{{item._id}}</p>  -->
+        <div class="col-md-4 col-lg-3  col-sm-6   ">
+            <div class="card mx-auto overflow-hidden all h-100 ">
+
+                <div class="cursor-pointer text-center h-50 overflow-hidden pt-2"
+                    [routerLink]="['/categorydetails',item._id]">
+                    <img [src]="item.image" class="w-75   card-img-top" alt="prod-img">
+
+                </div>
+                <div class="card-body  d-flex flex-column  h-50 ">
+                    <h5 class="card-title text-success">{{item.name}}</h5>
+                    <div class=" btn-hover">
+                        <button (click)="addToCartBtn(item._id)" class="btn w-75 mx-auto btn-success  bg-green"> Add To
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        }
+    </div>
+
+</div>
